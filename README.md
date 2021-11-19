@@ -46,10 +46,6 @@ With the default nuxt config, all CSS styles from all layouts and all pages are 
 | `/menu`     | `altlayout` | black                | ❌ purple          | white                      | ❌ pink                  |
 | `/checkout` | `altlayout` | darkolivegreen       | ✅ darkolivegreen  | white                      | ❌ pink                  |
 
-- Homepage renders with a light-blue background and purple text (incorrect bg and text colour)
-- Search page renders with a light-blue background and purple text (correct rendering)
-- Menu page renders with a pink background and purple text (incorrect bg and text colour)
-- Checkout page renders with a pink background and dark olive green text (incorrect bg colour)
 
 **In Build Mode**
 
@@ -75,10 +71,6 @@ With the default nuxt config, CSS styles from all layouts are included when rend
 | `/menu`     | `altlayout` | black                | ✅ black           | white                      | ❌ lightblue             |
 | `/checkout` | `altlayout` | darkolivegreen       | ✅ darkolivegreen  | white                      | ❌ lightblue             |
 
-- Homepage renders with a pink background and black text (correct rendering)
-- Search page renders with a light-blue background and purple text (correct rendering)
-- Menu page renders with a light-blue background and black text (incorrect background colour, applying bg style from incorrect layout)
-- Checkout page renders with a light-blue background and dark olive green text (incorrect background colour, applying bg style from incorrect layout)
 
 With `splitChunks: layout` set in the Nuxt config (uncomment this config in `nuxt.config.js` - lines 40-42):
 
@@ -89,10 +81,6 @@ With `splitChunks: layout` set in the Nuxt config (uncomment this config in `nux
 | `/menu`     | `altlayout` | black                | ✅ black           | white                      | ✅ white                 |
 | `/checkout` | `altlayout` | darkolivegreen       | ✅ darkolivegreen  | white                      | ✅ white                 |
 
-- Homepage renders with a light-blue background and black text (incorrect background colour, layout bg style is taking precedence over page style)
-- Search page renders with a light-blue background and purple text (correct rendering)
-- Menu page renders with a white background and black text (correct rendering)
-- Checkout page renders with a white background and dark olive green text (correct rendering)
 
 **In build mode**
 
