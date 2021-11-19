@@ -25,11 +25,12 @@ See this repo where this has been setup in Nuxt 2 and 3.
 
 Expected Rendering:
 
-- `/` (`index.vue` - homepage) should display a page with a pink background and default black text colour.
-- `/search`  should display a page with a pink background and purple text colour.
-- `/menu`  should display a page with a white background and default black text colour.
-- `/checkout`  should display a page with a white background and dark olive green text colour.
-
+| Page        | Layout      | Expected text colour | Expected background colour |
+| ----------- | ----------- | -------------------- | -------------------------- |
+| `/`         | `default`   | black                | pink                       |
+| `/search`   | `default`   | purple               | lightblue                  |
+| `/menu`     | `altlayout` | black                | white                      |
+| `/checkout` | `altlayout` | darkolivegreen       | white                      |
 
 
 ### Nuxt 3 Rendering
@@ -37,6 +38,13 @@ Expected Rendering:
 **In dev mode**
 
 With the default nuxt config, all CSS styles from all layouts and all pages are included when rendering a page.
+
+| Page        | Layout      | Expected text colour | Actual text colour | Expected background colour | Actual background colour |
+| ----------- | ----------- | -------------------- | ------------------ | -------------------------- | ------------------------ |
+| `/`         | `default`   | black                | ❌ purple          | pink                       | ❌ lightblue             |
+| `/search`   | `default`   | purple               | ✅ purple          | lightblue                  | ✅ lightblue             |
+| `/menu`     | `altlayout` | black                | ❌ purple          | white                      | ❌ pink                  |
+| `/checkout` | `altlayout` | darkolivegreen       | ✅ darkolivegreen  | white                      | ❌ pink                  |
 
 - Homepage renders with a light-blue background and purple text (incorrect bg and text colour)
 - Search page renders with a light-blue background and purple text (correct rendering)
@@ -53,12 +61,26 @@ All pages render styles as expected.
 
 With the default nuxt config, CSS styles from all layouts are included when rendering a page.
 
+| Page        | Layout      | Expected text colour | Actual text colour | Expected background colour | Actual background colour |
+| ----------- | ----------- | -------------------- | ------------------ | -------------------------- | ------------------------ |
+| `/`         | `default`   | black                | ✅ black           | pink                       | ✅ pink                 |
+| `/search`   | `default`   | purple               | ✅ purple          | lightblue                  | ✅ lightblue            |
+| `/menu`     | `altlayout` | black                | ✅ black           | white                      | ❌ lightblue            |
+| `/checkout` | `altlayout` | darkolivegreen       | ✅ darkolivegreen  | white                      | ❌ lightblue            |
+
 - Homepage renders with a pink background and black text (correct rendering)
 - Search page renders with a light-blue background and purple text (correct rendering)
 - Menu page renders with a light-blue background and black text (incorrect background colour, applying bg style from incorrect layout)
 - Checkout page renders with a light-blue background and dark olive green text (incorrect background colour, applying bg style from incorrect layout)
 
 With `splitChunks: layout` set in the nuxt config (uncomment this config in `nuxt.config.js` (lines 40-42):
+
+| Page        | Layout      | Expected text colour | Actual text colour | Expected background colour | Actual background colour |
+| ----------- | ----------- | -------------------- | ------------------ | -------------------------- | ------------------------ |
+| `/`         | `default`   | black                | ✅ black           | pink                       | ❌ lightblue             |
+| `/search`   | `default`   | purple               | ✅ purple          | lightblue                  | ✅ lightblue             |
+| `/menu`     | `altlayout` | black                | ✅ black           | white                      | ✅ white                 |
+| `/checkout` | `altlayout` | darkolivegreen       | ✅ darkolivegreen  | white                      | ✅ white                 |
 
 - Homepage renders with a light-blue background and black text (incorrect background colour, layout bg style is taking precedence over page style)
 - Search page renders with a light-blue background and purple text (correct rendering)
