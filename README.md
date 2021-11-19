@@ -55,6 +55,13 @@ With the default nuxt config, all CSS styles from all layouts and all pages are 
 
 All pages render styles as expected.
 
+| Page        | Layout      | Expected text colour | Actual text colour | Expected background colour | Actual background colour |
+| ----------- | ----------- | -------------------- | ------------------ | -------------------------- | ------------------------ |
+| `/`         | `default`   | black                | ✅ black           | pink                       | ✅ pink                  |
+| `/search`   | `default`   | purple               | ✅ purple          | lightblue                  | ✅ lightblue             |
+| `/menu`     | `altlayout` | black                | ✅ black           | white                      | ✅ white                 |
+| `/checkout` | `altlayout` | darkolivegreen       | ✅ darkolivegreen  | white                      | ✅ white                 |
+
 ### Nuxt 2 Rendering
 
 **In dev mode**
@@ -63,17 +70,17 @@ With the default nuxt config, CSS styles from all layouts are included when rend
 
 | Page        | Layout      | Expected text colour | Actual text colour | Expected background colour | Actual background colour |
 | ----------- | ----------- | -------------------- | ------------------ | -------------------------- | ------------------------ |
-| `/`         | `default`   | black                | ✅ black           | pink                       | ✅ pink                 |
-| `/search`   | `default`   | purple               | ✅ purple          | lightblue                  | ✅ lightblue            |
-| `/menu`     | `altlayout` | black                | ✅ black           | white                      | ❌ lightblue            |
-| `/checkout` | `altlayout` | darkolivegreen       | ✅ darkolivegreen  | white                      | ❌ lightblue            |
+| `/`         | `default`   | black                | ✅ black           | pink                       | ✅ pink                  |
+| `/search`   | `default`   | purple               | ✅ purple          | lightblue                  | ✅ lightblue             |
+| `/menu`     | `altlayout` | black                | ✅ black           | white                      | ❌ lightblue             |
+| `/checkout` | `altlayout` | darkolivegreen       | ✅ darkolivegreen  | white                      | ❌ lightblue             |
 
 - Homepage renders with a pink background and black text (correct rendering)
 - Search page renders with a light-blue background and purple text (correct rendering)
 - Menu page renders with a light-blue background and black text (incorrect background colour, applying bg style from incorrect layout)
 - Checkout page renders with a light-blue background and dark olive green text (incorrect background colour, applying bg style from incorrect layout)
 
-With `splitChunks: layout` set in the nuxt config (uncomment this config in `nuxt.config.js` (lines 40-42):
+With `splitChunks: layout` set in the Nuxt config (uncomment this config in `nuxt.config.js` - lines 40-42):
 
 | Page        | Layout      | Expected text colour | Actual text colour | Expected background colour | Actual background colour |
 | ----------- | ----------- | -------------------- | ------------------ | -------------------------- | ------------------------ |
