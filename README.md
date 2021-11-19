@@ -84,4 +84,4 @@ With `splitChunks: layout` set in the Nuxt config (uncomment this config in `nux
 
 **In build mode**
 
-Renders pages the same as in dev mode (see above).
+Renders the pages the same as in dev mode (see above results).
