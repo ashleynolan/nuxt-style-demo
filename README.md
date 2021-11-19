@@ -25,12 +25,12 @@ See this repo where this has been setup in Nuxt 2 and 3.
 
 Expected Rendering:
 
-| Page        | Layout      | Expected text colour | Expected background colour |
-| ----------- | ----------- | -------------------- | -------------------------- |
-| `/`         | `default`   | black                | pink                       |
-| `/search`   | `default`   | purple               | lightblue                  |
-| `/menu`     | `altlayout` | black                | white                      |
-| `/checkout` | `altlayout` | darkolivegreen       | white                      |
+| Page        | Expected text colour | Expected background colour |
+| ----------- | -------------------- | -------------------------- |
+| `/`         | black                | pink                       |
+| `/search`   | purple               | lightblue                  |
+| `/menu`     | black                | white                      |
+| `/checkout` | darkolivegreen       | white                      |
 
 
 ### Nuxt 3 Rendering
